@@ -67,8 +67,7 @@ $(document).ready(function () {
           ) * 100;
 
         $("#result").html(
-          `<p>En promedio se pueden vender a: <span class="price">$ ${average}</span></p>
-          <p>Desde <strong>$${lessExpensivesAverage}</strong> hasta <strong>$${moreExpensivesAverage}</strong>.</p>`
+          `<p>En promedio se pueden vender a: <span class="price">$ ${average.toLocaleString()}</span></p><p>Desde <strong>$${lessExpensivesAverage.toLocaleString()}</strong> hasta <strong>$${moreExpensivesAverage.toLocaleString()}</strong>.</p>`
         );
         $("#result").show();
       }
