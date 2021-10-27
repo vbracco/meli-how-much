@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="¿No sabes a cuánto vender algo? Te damos una idea!">    
+	<title>MELI How Much?</title>
+	<meta name="title" content="¿No sabes a cuánto vender algo? Te damos una idea!">
+	<meta name="description" content="Escribí lo que queres vender, y buscamos algunos precios de referencia.">
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://vbracco.github.io/meli-how-much/">
+	<meta property="og:title" content="¿No sabes a cuánto vender algo? Te damos una idea!">
+	<meta property="og:description" content="Escribí lo que queres vender, y buscamos algunos precios de referencia.">
+	<meta property="og:image" content="https://vbracco.github.io/meli-how-much/img/share.png">
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://vbracco.github.io/meli-how-much/">
+	<meta property="twitter:title" content="¿No sabes a cuánto vender algo? Te damos una idea!">
+	<meta property="twitter:description" content="Decidi cuanto queres gastar, click y listo!">
+	<meta property="twitter:image" content="https://vbracco.github.io/meli-how-much/img/share.png">
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="main.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+<body class="text-center">
+	
+	<main class="form-signin">
+		<h1 class="h3 mb-4 fw-normal">¿No sabes a cuánto vender algo?</h1>
+		<h1 class="h3 mb-4 fw-normal">¡Te doy una idea!</h1>
+		
+		<div class="form-floating mb-3">
+            <input type="text" id="search" class="form-control" value="" placeholder="Paleta de Paddle Usada">
+            <label for="search">¿Qué estás por vender?</label>
+		</div>
+		
+		<button class="w-100 btn btn-lg btn-primary mb-3" id="main-btn" type="button">¿Cuánto vale?</button>
+		
+		<div class="mb-3" id="result"></div>
+		
+		<p class="mt-3 mb-3 text-muted disclaimer">Idea y desarrollo de <a href="https://twitter.com/vbracco" target="_blank">@vbracco</a>. Basado en <a href="https://chcibelli.github.io/shake-n-buy/" target="_blank">shake-n-buy</a>. Podes ver todo el código fuente abierto y disponible en <a href="https://github.com/vbracco/a-cuanto-vender" target="_blank">Github</a>.</p>
+		<p class="mt-3 mb-3 text-muted disclaimer">Esta web no es oficial ni tiene relación alguna con Mercado Libre. Toda la información consultada y expuesta aquí es pública y esta disponible en las <a href="https://developers.mercadolibre.com" target="_blank">APIS</a> de Mercado Libre.</p>
+	</main>
+    <script src="main.min.js?v=1.0"></script>
+</body>
+</html>
