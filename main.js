@@ -16,13 +16,13 @@ $(document).ready(function () {
     }
   });
 
-  $('#search').on('keypress',function(e) {
-    if(e.which == 13) {
-        $('#main-btn').click();
-        return false;
+  $("#search").on("keypress", function (e) {
+    if (e.which == 13) {
+      $("#main-btn").click();
+      return false;
     }
     return true;
-});
+  });
 
   $("#main-btn").click(function () {
     $(".product-img").fadeOut();
@@ -31,7 +31,7 @@ $(document).ready(function () {
     const condition = $("input:radio[name=condition]:checked").val();
     const site = "MLA";
 
-    $("#result").html("<p>Buscando&hellip;</p>")
+    $("#result").html("<p>Buscando&hellip;</p>");
     const url = `https://api.mercadolibre.com/sites/${site}/search?status=active&q=${product}&limit=50&condition=${condition}&buying_mode=buy_it_now`;
     $.getJSON(url, function (data) {
       if (typeof data.results === "undefined") {
@@ -59,23 +59,34 @@ $(document).ready(function () {
         );
 
         const moreExpensivesAverage =
-          parseInt(
-            parseInt(
-              moreExpensives.reduce((sum, item) => sum + item.price, 0) /
-                moreExpensives.length
-            ) / 100
-          ) * 100;
+          moreExpensives.length > 2
+            ? parseInt(
+                parseInt(
+                  moreExpensives.reduce((sum, item) => sum + item.price, 0) /
+                    moreExpensives.length
+                ) / 100
+              ) * 100
+            : 0;
 
         let lessExpensivesAverage =
-          parseInt(
-            parseInt(
-              lessExpensives.reduce((sum, item) => sum + item.price, 0) /
-                lessExpensives.length
-            ) / 100
-          ) * 100;
+          lessExpensives.length > 2
+            ? parseInt(
+                parseInt(
+                  lessExpensives.reduce((sum, item) => sum + item.price, 0) /
+                    lessExpensives.length
+                ) / 100
+              ) * 100
+            : 0;
 
+        const extraInfo =
+          !isNaN(moreExpensivesAverage) &&
+          !isNaN(lessExpensivesAverage) &&
+          moreExpensivesAverage > 0 &&
+          lessExpensivesAverage > 0
+            ? `<p>Desde <strong>$${lessExpensivesAverage.toLocaleString()}</strong> hasta <strong>$${moreExpensivesAverage.toLocaleString()}</strong>.</p>`
+            : "";
         $("#result").html(
-          `<p>En promedio se pueden vender a: <span class="price">$ ${average.toLocaleString()}</span></p><p>Desde <strong>$${lessExpensivesAverage.toLocaleString()}</strong> hasta <strong>$${moreExpensivesAverage.toLocaleString()}</strong>.</p>`
+          `<p>En promedio se pueden vender a: <span class="price">$ ${average.toLocaleString()}</span></p>${extraInfo}`
         );
         $("#result").show();
       }
