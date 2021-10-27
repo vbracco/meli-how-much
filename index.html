@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="¿No sabes a cuánto vender algo? Te damos una idea!">    
 	<title>MELI How Much?</title>
 	<meta name="title" content="¿No sabes a cuánto vender algo? Te damos una idea!">
 	<meta name="description" content="Escribí lo que queres vender, y buscamos algunos precios de referencia.">
@@ -47,6 +46,14 @@
             <input type="text" id="search" class="form-control" value="" placeholder="">
             <label for="search">¿Qué estás por vender?</label>
 		</div>
+		<div class="form-check form-check-inline mb-3">
+			<input type="radio" id="conditionNew" name="condition" value="new">
+    		<label for="conditionNew">Nuevo</label>
+		</div>
+		<div class="form-check form-check-inline mb-3">
+    		<input type="radio" id="conditionUsed" name="condition" value="used" checked>
+    		<label for="conditionNew">Usado</label>
+		</div>
 		
 		<button class="w-100 btn btn-lg btn-primary mb-3" id="main-btn" type="button">¿Cuánto vale?</button>
 		
@@ -55,6 +62,6 @@
 		<p class="mt-3 mb-3 text-muted disclaimer">Idea y desarrollo de <a href="https://twitter.com/vbracco" target="_blank">@vbracco</a>. Basado en <a href="https://chcibelli.github.io/shake-n-buy/" target="_blank">shake-n-buy</a>. Podes ver todo el código fuente abierto y disponible en <a href="https://github.com/vbracco/meli-how-much/" target="_blank">Github</a>.</p>
 		<p class="mt-3 mb-3 text-muted disclaimer">Esta web no es oficial ni tiene relación alguna con Mercado Libre. Toda la información consultada y expuesta aquí es pública y esta disponible en las <a href="https://developers.mercadolibre.com" target="_blank">APIS</a> de Mercado Libre.</p>
 	</main>
-    <script src="main.min.js?v=1.1"></script>
+    <script src="main.min.js?v=1.2"></script>
 </body>
 </html>

@@ -16,15 +16,23 @@ $(document).ready(function () {
     }
   });
 
+  $('#search').on('keypress',function(e) {
+    if(e.which == 13) {
+        $('#main-btn').click();
+        return false;
+    }
+    return true;
+});
+
   $("#main-btn").click(function () {
     $(".product-img").fadeOut();
 
     const product = $("#search").val();
+    const condition = $("input:radio[name=condition]:checked").val();
     const site = "MLA";
 
     $("#result").html("<p>Buscando&hellip;</p>")
-    const url = `https://api.mercadolibre.com/sites/${site}/search?status=active&q=${product}&limit=50`;
-
+    const url = `https://api.mercadolibre.com/sites/${site}/search?status=active&q=${product}&limit=50&condition=${condition}&buying_mode=buy_it_now`;
     $.getJSON(url, function (data) {
       if (typeof data.results === "undefined") {
         $("#result").html("<p>No encontré nada parecido.</p>").show();
